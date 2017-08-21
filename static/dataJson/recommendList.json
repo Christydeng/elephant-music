@@ -1,0 +1,42 @@
+{
+  "resultCode": "0",
+  "resultMsg": "",
+  "data": {
+    "currPage": 2,
+    "total": 88,
+    "pageSize": 10,
+    "collectionMoney": 10,
+    "data": [
+      {
+        "imgurl": "/600.jpg",
+        "name": "Harry",
+        "dissname": "迪士尼原声精选集， 听完瞬间年轻10岁"
+      },
+      {
+        "imgurl": "/601.jpg",
+        "name": "Sundae",
+        "dissname": "50首精选英文Remix, 赴一场混搭风听觉盛宴"
+      },
+      {
+        "imgurl": "/602.jpg",
+        "name": "三剑客",
+        "dissname": "配乐作曲家合集： 独具匠心的旋律（日本篇）"
+      },
+      {
+        "imgurl": "/603.jpg",
+        "name": "霜",
+        "dissname": "偶得拾趣： 民谣里的古风与诗意"
+      },
+      {
+        "imgurl": "/604.jpg",
+        "name": "E.H",
+        "dissname": "【治愈/致郁】key那些感动心灵的旋律"
+      },
+      {
+        "imgurl": "/605.jpg",
+        "name": "风少",
+        "dissname": "通道开启： 狂补英文， 开学等级测试必过"
+      }
+    ]
+  }
+}
