@@ -28,45 +28,47 @@
 </template>
 
 <script>
-
-export default {
-  components: {
-  },
-  data () {
-    return {
-      singerList: [],
-      shortcut: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    }
-  },
-  props: {
-    data: {
-      type: Array,
-      default: []
-    }
-  },
-  watch: {
-  },
-  created () {
-    this.getSingerList()
-  },
-  methods: {
-    getSingerList: function () {
-      let vm = this;
-      vm.$http.get('./../static/dataJson/singerList.json').then(function(response) {
-          var data = response.body;
-          vm.singerList = data.data.data; 
-          console.log(vm.singerList); 
-        }, function(response) {
-          alert("请求失败了");
-      })
-    }
-  },
-  computed: {
-  },
-  mounted () {
-  },
-  destroyed () {}
-}
+  import { global } from '@/global/global'
+  import { api } from '@/global/api'
+  export default {
+    components: {
+    },
+    data () {
+      return {
+        singerList: [],
+        shortcut: ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+      }
+    },
+    props: {
+      data: {
+        type: Array,
+        default: []
+      }
+    },
+    watch: {
+    },
+    created () {
+      this.getSingerList()
+    },
+    methods: {
+      getSingerList () {
+        let vm = this;
+        console.log(api.singerList)
+        global.get(api.singerList, null, function(response) {
+            var data = response.body;
+            vm.singerList = data.data.data; 
+            console.log(vm.singerList); 
+          }, function(response) {
+            alert("请求失败了");
+        }, false)
+      }
+    },
+    computed: {
+    },
+    mounted () {
+    },
+    destroyed () {}
+  }
 </script>
 
 <style lang="scss" scoped>

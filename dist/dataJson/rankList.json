@@ -1,0 +1,100 @@
+{
+  "resultCode": "0",
+  "resultMsg": "",
+  "data": {
+    "currPage": 2,
+    "total": 88,
+    "pageSize": 10,
+    "collectionMoney": 10,
+    "data": 
+    {
+      "toplist": [
+        { 
+          "picUrl": "/600.jpg",
+          "songList": [ 
+            {
+              "songname": "带你去旅行", 
+              "singername": "校长"
+            },
+            {
+              "songname": "时间有泪（Live）", 
+              "singername": "陈颖恩" 
+            },
+            {
+              "songname": "Friends", 
+              "singername": "Justin Bieber/BloodPop" 
+            }
+          ] 
+        },
+        { 
+          "picUrl": "/601.jpg",
+          "songList":[
+            {
+              "songname": "我们的时光", 
+              "singername": "TFBOYS"
+            },
+            {
+              "songname": "远走高飞（独唱版）", 
+              "singername": "金志文"
+            },
+            {
+              "songname": "非酋", 
+              "singername": "薛明嬛、朱贺"
+            }
+          ]
+        },
+        { 
+          "picUrl": "/602.jpg",
+          "songList": [
+            {
+              "songname": "Friends", 
+              "singername": "Justin Bieber/BloodPop"
+            },
+            {
+              "songname": "带你去旅行", 
+              "singername": "校长"
+            },
+            {
+              "songname": "你可知道", 
+              "singername": "黄玲"
+            }
+          ] 
+        },
+        { 
+          "picUrl": "/603.jpg",
+          "songList": [
+            {
+              "songname": "FRE$HONE(Live)", 
+              "singername": "PG One"
+            },
+            {
+              "songname": "毕业（Live）", 
+              "singername": "欧阳"
+            },
+            {
+              "songname": "饶舌歌（Live）", 
+              "singername": "陈奂仁"
+            }
+          ] 
+        },
+        { 
+          "picUrl": "/604.jpg",
+          "songList": [
+            {
+              "songname": "消愁", 
+              "singername": "毛不易"
+            },
+            {
+              "songname": "毕业（Live）", 
+              "singername": "欧阳"
+            },
+            {
+              "songname": "一程山路（Live）", 
+              "singername": "毛不易"
+            }
+          ] 
+        }
+      ]
+    }
+  }
+}

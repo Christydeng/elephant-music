@@ -1,0 +1,44 @@
+{
+  "resultCode": "0",
+  "resultMsg": "",
+  "data": {
+    "currPage": 2,
+    "total": 88,
+    "pageSize": 10,
+    "collectionMoney": 10,
+    "data": [
+      {
+        "avatar": "/600.jpg",
+        "name": "Harry"
+      },
+      {
+        "avatar": "/601.jpg",
+        "name": "Sundae"
+      },
+      {
+        "avatar": "/602.jpg",
+        "name": "三剑客"
+      },
+      {
+        "avatar": "/603.jpg",
+        "name": "霜"
+      },
+      {
+        "avatar": "/604.jpg",
+        "name": "E.H"
+      },
+      {
+        "avatar": "/605.jpg",
+        "name": "风少"
+      },
+      {
+        "avatar": "/601.jpg",
+        "name": "E.H"
+      },
+      {
+        "avatar": "/602.jpg",
+        "name": "风少"
+      }
+    ]
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "resultCode": "0",
+  "resultMsg": "",
+  "data": {
+    "currPage": 2,
+    "total": 88,
+    "pageSize": 10,
+    "collectionMoney": 10,
+    "data": [
+      "薛之谦", "权志龙", "EXO", "鹿晗", "周杰伦", "夏目", "许嵩", "花粥", "陈奕迅", "孙燕姿", "蔡依林", "潘玮柏", "林俊杰", "张惠妹"
+    ]
+  }
+}

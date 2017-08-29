@@ -73,7 +73,7 @@
 <style>
 	.login_box {
 		padding-top: 130px;
-		height: 550px;
+		height: 700px;
 	}
 
 	.login_box input {

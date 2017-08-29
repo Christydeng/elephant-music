@@ -27,37 +27,41 @@
 </template>
 
 <script>
-export default {
-  components: {
-  },
-  data () {
-    return {
-      // 热门搜索关键系
-      query: '',
-      hotkey: []
-    }
-  },
-  created () {
-    this._getHotKey()
-  },
-  methods: {
-    _getHotKey: function () {
-      var vm = this
-      // 在控制台输出查询条件;
-      this.$http.get('./../static/dataJson/hotkey.json').then(function(response) {
-        var data = response.body
-        vm.hotkey = data.data.data
-      }, function(response) { alert('请求失败了') })
-    },
-    clearQuery() {
-      this.query = ''
-    },
-    // 给父亲用的，让输入框失去焦点，避免滚动搜索结果时移动端键盘遮挡
-    blur() {
-      this.$refs.queryRef.blur()
-    }
-  }
-}
+	import { global } from '@/global/global'
+  import { api } from '@/global/api'
+	export default {
+	  components: {
+	  },
+	  data () {
+	    return {
+	      // 热门搜索关键系
+	      query: '',
+	      hotkey: []
+	    }
+	  },
+	  created () {
+	  	// 获取热门搜索关键系
+	    this._getHotKey()
+	  },
+	  methods: {
+	    _getHotKey () {
+	      var vm = this
+	      global.get(api.hotkey, null, function(response) {
+	        var data = response.body
+	        vm.hotkey = data.data.data
+	      	}, function(response) { 
+	      		alert('请求失败了') 
+	  		}, false)
+	    },
+	    clearQuery() {
+	      this.query = ''
+	    },
+	    // 给父亲用的，让输入框失去焦点，避免滚动搜索结果时移动端键盘遮挡
+	    blur() {
+	      this.$refs.queryRef.blur()
+	    }
+	  }
+	}
 </script>
 
 <style>

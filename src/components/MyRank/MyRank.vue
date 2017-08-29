@@ -27,91 +27,91 @@
   </div>
 </template>
 
-<script>import { mapMutations } from 'vuex'
-
-export default {
-  components: {
-  },
-  data () {
-    return {
-      toplist: []
-    }
-  },
-  props: {},
-  watch: {},
-  filters: {},
-  created () {
-    this.getRankList()
-  },
-  methods: {
-  	getRankList: function (){
-  		let vm = this;
-  		vm.$http.get('./../static/dataJson/rankList.json').then(function(response) {
-  		    var data = response.body;
-  		    vm.toplist = data.data.data.toplist; 
-  		    console.log(vm.toplist); 
-  		  }, function(response) {
-  		    alert("请求失败了");
-  		})
-  	}
-  },
-  computed: {},
-  mounted () {},
-  destroyed () {}
-}
+<script>
+  import { global } from '@/global/global'
+  import { api } from '@/global/api'
+  export default {
+    components: {
+    },
+    data () {
+      return {
+        toplist: []
+      }
+    },
+    props: {},
+    watch: {},
+    filters: {},
+    created () {
+      this.getRankList()
+    },
+    methods: {
+    	getRankList (){
+    		let vm = this;
+    		global.get(api.rankList, null, function(response) {
+    		    var data = response.body;
+    		    vm.toplist = data.data.data.toplist; 
+    		  }, function(response) {
+    		    alert("请求失败了");
+    		}, false)
+    	}
+    },
+    computed: {},
+    mounted () {},
+    destroyed () {}
+  }
 </script>
 
 <style lang="scss" scoped>
-@import '~@/common/scss/const.scss';
-@import '~@/common/scss/mymixin.scss';
+  @import '~@/common/scss/const.scss';
+  @import '~@/common/scss/mymixin.scss';
 
-.my-rank {
-  position: fixed;
-  width: 100%;
-  top: 88px;
-  bottom: 0;
-  .toplist {
-    height: 100%;
-    overflow: hidden;
-    .item {
-      display: flex;
-      margin: 0 20px;
-      padding-top: 20px;
-      height: 100px;
-      &:last-child {
-        padding-bottom: 20px;
-      }
-      .icon {
-        flex: 0 0 100px;
-        width: 100px;
-        height: 100px;
-      }
-      .songlist {
-        flex: 1;
+  .my-rank {
+    position: fixed;
+    width: 100%;
+    top: 88px;
+    bottom: 0;
+    .toplist {
+      height: 100%;
+      overflow: hidden;
+      .item {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 20px;
+        margin: 0 20px;
+        padding-top: 20px;
         height: 100px;
-        overflow: hidden;
-        background: $color-highlight-background;
-        color: $color-text-d;
-        font-size: $font-size-small;
-        .song {
-          @include no-wrap();
-          line-height: 26px;
-          .singername {
-            color: rgba(255, 255, 255, 0.2);
+        &:last-child {
+          padding-bottom: 20px;
+        }
+        .icon {
+          flex: 0 0 100px;
+          width: 100px;
+          height: 100px;
+        }
+        .songlist {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          padding: 0 20px;
+          height: 100px;
+          overflow: hidden;
+          background: $color-highlight-background;
+          color: $color-text-d;
+          font-size: $font-size-small;
+          .song {
+            @include no-wrap();
+            line-height: 26px;
+            .singername {
+              color: rgba(255, 255, 255, 0.2);
+            }
           }
         }
       }
-    }
-    .loading-container {
-      position: absolute;
-      width: 100%;
-      top: 50%;
-      transform: translateY(-50%);
+      .loading-container {
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
-}
 </style>

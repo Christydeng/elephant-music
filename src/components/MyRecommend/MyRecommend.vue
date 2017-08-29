@@ -36,40 +36,41 @@
 </template>
 
 <script>
-
-export default {
-  components: {
-  },
-  data () {
-    return {
-      lists: []
-    }
-  },
-  created: function () {
-    this.submitUserInfo(),
-    this.getRecommendList()
-  },
-  methods: {
-    submitUserInfo: function () {
-      let vm = this
-      //取回userInfo变量
-      let userInfo = sessionStorage.userInfo
-      //把字符串转换成JSON对象
-      userInfo = JSON.parse(userInfo)
-      console.log('登录的用户：===' + userInfo.userName + '||密码：===' + userInfo.password)
+  import { global } from '@/global/global'
+  import { api } from '@/global/api'
+  export default {
+    components: {
     },
-    getRecommendList: function () {
-      let vm = this;
-      vm.$http.get('./../static/dataJson/recommendList.json').then(function(response) {
-          var data = response.body;
-          vm.lists = data.data.data; 
-          console.log(vm.lists); 
-        }, function(response) {
-          alert("请求失败了");
-      })
+    data () {
+      return {
+        lists: []
+      }
+    },
+    created: function () {
+      this.submitUserInfo(),
+      this.getRecommendList()
+    },
+    methods: {
+      submitUserInfo () {
+        let vm = this
+        //取回userInfo变量
+        let userInfo = sessionStorage.userInfo
+        //把字符串转换成JSON对象
+        userInfo = JSON.parse(userInfo)
+        console.log('登录的用户：===' + userInfo.userName + '||密码：===' + userInfo.password)
+      },
+      //获取热门推荐数据
+      getRecommendList () {
+        let vm = this;
+        global.get(api.recommendList, null, function(response) {
+            var data = response.body;
+            vm.lists = data.data.data; 
+          }, function(response) {
+            alert("请求失败了");
+        }, false)
+      }
     }
   }
-}
 </script>
 
 <style lang="scss" scoped>
